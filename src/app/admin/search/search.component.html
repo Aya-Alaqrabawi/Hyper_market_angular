@@ -1,0 +1,54 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <app-dashboard></app-dashboard>
+    <div class="content-wrapper"> <!--204-->
+      <div class="container-fluid">
+
+        <form [formGroup]="SearchForm" method="post">
+            <input formControlName="dateFrom" type="date" name="start"/>
+            <input formControlName="dateTo" type="date" name="end" />
+            <input type="submit" name="submit" value="Search" (click)="getSearch()"/>
+        </form>
+        <!-- <button class="button1 btn btn-success btn-block fa fa-file-excel-o " (click)="exportexcel()">Export to Excel</button>
+        <button class="button2 btn btn-success btn-block fa fa-file-pdf-o fa fa-file-pdf-o"  (click)="openPDF()">Download PDF</button> -->
+        <div clas="row">
+            <div class="card-body">
+                <button class="button1 btn btn-success btn-block fa fa-file-excel-o " (click)="exportexcel()">Export to Excel</button>
+                <button class="button2 btn btn-success btn-block fa fa-file-pdf-o fa fa-file-pdf-o"  (click)="openPDF()">Download PDF</button>
+            </div>
+        </div>
+        <div id="htmlData">
+            
+        <table class="table table-bordered" id="excel-table" width="100%" cellspacing="0">
+            <thead>
+            <tr>
+                
+                <th>Order ID</th>
+                <th>Total Price</th>
+                <th>Ordered At</th>
+                <th>Customer ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let userregis of searchService.data">
+                <td>{{userregis.orderID}}</td>
+                <td>{{userregis.totalPrice}}</td>
+                <td>{{userregis.orderAt}}</td>
+                <td>{{userregis.customerID}}</td>
+            </tr>
+        </tbody>
+        </table>
+    </div>
+     
+      </div>
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+      <footer class="sticky-footer">
+        <div class="container">
+          <div class="text-center">
+            <small>Copyright © HyperMarket 2022</small>
+          </div>
+        </div>
+      </footer>
+  
+    </div>
+    </body> 

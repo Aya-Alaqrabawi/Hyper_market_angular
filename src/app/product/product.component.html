@@ -1,0 +1,61 @@
+<app-header></app-header>
+
+ <!-- Page Header Start -->
+
+ <div class="container-fluid page-header py-5 mb-5">
+    <div class="container py-5">
+        <h1 class="display-3 text-white mb-3 animated slideInDown">Products</h1>
+        <nav aria-label="breadcrumb animated slideInDown">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a class="text-white" href="home">Home</a></li>
+                <li class="breadcrumb-item"><a class="text-white" href="cart">cart</a></li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!-- Page Header End -->
+<!--Search Product Start -->
+<form class="container-xxl py-5">
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Poduct Name"[value]="proName" (change)="InputValue($event)">
+      </div>
+      <!-- <div class="col">
+            <select  class="form-control">
+                <option selected>Choose...</option>
+              <option *ngFor="let category of home.producut"[value]="category.categoryID" (change)="SaveData($event)">{{category.catName}}</option>
+            </select>
+      </div> -->
+      <div class="col">
+        <input type="submit" class=" dagash btn btn-primary" placeholder="Last name" value="Search"(click)="search()">
+      </div>
+    </div>
+  </form>
+<!--Search Product End -->
+
+<!-- product Start -->
+<div class="container-xxl py-5">
+<div class="container">
+<div class="section-title text-center">
+ <h1 class="display-5 mb-5"> Products </h1>
+    </div>
+        <div class="row g-3">
+            <div class="col-md-6 col-lg-4 wow fadeInUp" data-wow-delay="0.1s" *ngFor="let item of home.product" >
+                <div class="service-item">
+                    <div class="overflow-hidden">
+                        <img class="img-fluid" src="../../assets/images/{{item.imageName}}" alt=""style="width:600px ; height:350px;">
+                         </div>
+                          <div class="p-4 text-center border border-5 border-light border-top-0">
+                           <h1 class="mb-3"  style="font-weight: bold;">{{item.proName}}</h1>
+                           <h3  style="font-weight: bold;">price : {{item.proPrice}}$</h3>
+                           <h4  style="font-weight: bold;">Barcode:{{item.barCode}}</h4>
+                           <p style="display: none;">{{item.proId}}</p>
+                           <a class="fw-medium"  href=""(click)="AddProduct(item.proId)"> <button class="btn btn-primary" >  Add Cart <i class="fas fa-cart-plus"></i> </button><i class="fa ms-2"></i></a>             
+                          </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- product End -->
+<app-footer></app-footer>

@@ -1,0 +1,17 @@
+<h2 mat-dialog-title>Post Your Testimonial</h2>
+<mat-dialog-content class="mat-typography"> 
+    <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Comment</mat-label>
+          <input type="text" matInput formControlName="Comment" placeholder="Enter">
+         
+        </mat-form-field>
+      </form>
+
+      
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="save()" cdkFocusInitial>Save </button>
+</mat-dialog-actions>
+

@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.policy-product .owl-next,
+.policy-product .owl-prev {
+    background: rgba(158 158 158 / 28%) !important;
+    color: #222 !important;
+    height: 60px !important;
+    width: 60px !important;
+    border-radius: 50% !important;
+    position: absolute;
+    top: 50%;
+}
+
+.policy-product .owl-next {
+    right: -25px;
+    transform: translate(-50%, -50%);
+}
+
+.policy-product .owl-prev {
+    left: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.policy-product .owl-next i,
+.policy-product .owl-prev i {
+    font-size: 24px;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    padding: 16px 7px !important;
+}

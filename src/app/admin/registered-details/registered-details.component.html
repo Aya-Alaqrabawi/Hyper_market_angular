@@ -1,0 +1,35 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <app-dashboard></app-dashboard>
+  <div class="content-wrapper"> <!--204-->
+    <div class="container-fluid">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+              
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Mail</th>
+              <th>Image</th>
+          </tr>
+      </thead>
+      <tbody>
+          <tr *ngFor="let userregis of viewUserRegisService.data">
+              <td>{{userregis.firstName}}</td>
+              <td>{{userregis.lastName}}</td>
+              <td>{{userregis.mail}}</td>
+              <td>
+                  <img src="../../../assets/images/{{userregis.image}}" width="250px" height="250px">
+              </td>
+          </tr>
+      </tbody>
+      </table>
+    </div>
+    <footer class="sticky-footer">
+      <div class="container">
+        <div class="text-center">
+          <small>Copyright © HyperMarket 2022</small>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>

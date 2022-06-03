@@ -1,0 +1,76 @@
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+  <app-dashboard></app-dashboard>
+  <div class="content-wrapper"> <!--204-->
+    <div class="container-fluid">
+
+
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Monthly Report </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <button class="button1 btn btn-success btn-block fa fa-file-excel-o " (click)="exportexcel()">Export to Excel</button>
+            <button class="button2 btn btn-success btn-block fa fa-file-pdf-o fa fa-file-pdf-o"  (click)="openPDF()">Download PDF</button>
+            <div id="htmlData">
+            <table class="table table-bordered" id="excel-table" width="100%" cellspacing="0">
+        <thead>
+        <tr>
+            <th>Order ID</th>
+            <th>Total price </th>
+            <th>Order Date</th>
+            <th>Customer ID</th>
+
+        </tr>
+      </thead>
+      <tbody>
+ 
+        <tr *ngFor="let aaa of userRegisService.arr">
+
+          <td>
+                {{aaa.orderID}}
+            </td>
+            <td>
+                {{aaa.totalprice}}
+            </td>
+            <td>
+              {{aaa.orderDate}}
+          </td>
+          <td>
+            {{aaa.customerID}}
+        </td>
+        </tr>
+
+        <tr *ngFor="let aaaa of userRegisService.arrr">
+          <td colspan="4" style="font-weight: bold;" >number of user :{{aaaa.monthlyCount}} </td>
+
+        </tr>
+
+      <tr *ngFor="let aaaaa of userRegisService.arrrr">
+        <td colspan="4"style="font-weight: bold;">
+           Total of sales: {{aaaaa.monthlyTotal}}
+
+       </td>
+
+      </tr>
+
+    </tbody>
+    </table>
+  </div>
+  </div>
+
+
+</div>
+</div>
+
+
+  </div>
+  <footer class="sticky-footer">
+    <div class="container">
+      <div class="text-center">
+        <small>Copyright © HyperMarket 2022</small>
+      </div>
+    </div>
+  </footer>
+</div>
+
+</body>

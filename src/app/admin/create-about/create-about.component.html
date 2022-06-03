@@ -1,0 +1,36 @@
+
+<h2 mat-dialog-title>Add About</h2>
+<mat-dialog-content class="mat-typography">
+
+
+  <form [formGroup]="CreateForm" class="example-form">
+    <input type="file" #file placeholder="choose image"
+    formControlName="Image" (change)="uploadFile(file.files)"
+    style="display: none;">
+    <button (click)="file.click()">Upload Image</button>
+  </form>
+
+    <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter first text</mat-label>
+          <input type="text" matInput formControlName="FirstText" placeholder="enter">
+        </mat-form-field>
+      </form>
+
+
+
+      <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter second text</mat-label>
+          <input type="text" matInput formControlName="SecondText" placeholder="enter">
+        </mat-form-field>
+      </form>
+
+
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="save()" cdkFocusInitial>Save </button>
+</mat-dialog-actions>
+

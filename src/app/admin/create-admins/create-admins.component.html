@@ -1,0 +1,60 @@
+<h2 mat-dialog-title>Add Category</h2>
+<mat-dialog-content class="mat-typography">
+   
+
+      <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Admin First Name</mat-label>
+          <input type="text" matInput formControlName="firstName" placeholder="enter">
+         
+          <mat-error *ngIf="CreateForm.controls['firstName'] hasError('required')">
+            Category is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field>
+      </form>
+
+      <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Admin Last Name</mat-label>
+          <input type="text" matInput formControlName="lastName" placeholder="enter">
+         
+          <mat-error *ngIf="CreateForm.controls['lastName'] hasError('required')">
+            Category is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field>
+      </form>
+
+      <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Mail</mat-label>
+          <input type="text" matInput formControlName="mail" placeholder="enter">
+         
+          <mat-error *ngIf="CreateForm.controls['mail'] hasError('required')">
+            Category is <strong>required</strong>
+          </mat-error> -->
+        </mat-form-field>
+      </form>
+
+      <!-- <form [formGroup]="CreateForm" class="example-form">
+        <mat-form-field class="example-full-width" appearance="fill">
+          <mat-label>Enter Image Name</mat-label>
+          <input type="text" matInput formControlName="imageName" placeholder="enter">
+         
+          <mat-error *ngIf="CreateForm.controls['imageName'] hasError('required')">
+            image is <strong>required</strong>
+          </mat-error> 
+        </mat-form-field>
+      </form> -->
+      <form [formGroup]="CreateForm" class="example-form">
+          <input type="file" #file placeholder="choose image"
+          formControlName="image" (change)="uploadFile(file.files)"
+          style="display: none;">
+          <button (click)="file.click()">Upload Image</button>
+        </form>
+      
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="save()" cdkFocusInitial>Save </button>
+</mat-dialog-actions>
+
